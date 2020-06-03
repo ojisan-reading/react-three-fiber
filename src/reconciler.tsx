@@ -312,8 +312,7 @@ function removeChild(parentInstance: any, child: any) {
       parentInstance.remove(child)
     } else {
       child.parent = null
-      if (parentInstance.__objects)
-        parentInstance.__objects = parentInstance.__objects.filter((x: any) => x !== child)
+      if (parentInstance.__objects) parentInstance.__objects = parentInstance.__objects.filter((x: any) => x !== child)
       // Remove attachment
       if (child.attach) parentInstance[child.attach] = null
       else if (child.attachArray)

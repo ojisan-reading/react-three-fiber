@@ -46,12 +46,12 @@ const IsReady = React.memo(({ gl, ...props }: NativeCanvasProps & { gl: any; siz
         onMoveShouldSetPanResponder: () => true,
         onMoveShouldSetPanResponderCapture: () => true,
         onPanResponderTerminationRequest: () => true,
-        onPanResponderStart: e => {
+        onPanResponderStart: (e) => {
           pointerDownCoords = [e.nativeEvent.locationX, e.nativeEvent.locationY]
           events.onPointerDown(clientXY(e))
         },
-        onPanResponderMove: e => events.onPointerMove(clientXY(e)),
-        onPanResponderEnd: e => {
+        onPanResponderMove: (e) => events.onPointerMove(clientXY(e)),
+        onPanResponderEnd: (e) => {
           events.onPointerUp(clientXY(e))
           if (pointerDownCoords) {
             const xDelta = pointerDownCoords[0] - e.nativeEvent.locationX
@@ -62,9 +62,9 @@ const IsReady = React.memo(({ gl, ...props }: NativeCanvasProps & { gl: any; siz
           }
           pointerDownCoords = null
         },
-        onPanResponderRelease: e => events.onPointerLeave(clientXY(e)),
-        onPanResponderTerminate: e => events.onLostPointerCapture(clientXY(e)),
-        onPanResponderReject: e => events.onLostPointerCapture(clientXY(e)),
+        onPanResponderRelease: (e) => events.onPointerLeave(clientXY(e)),
+        onPanResponderTerminate: (e) => events.onLostPointerCapture(clientXY(e)),
+        onPanResponderReject: (e) => events.onLostPointerCapture(clientXY(e)),
       }),
     []
   )

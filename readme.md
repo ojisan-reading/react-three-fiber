@@ -1,3 +1,7 @@
+```
+npx prettier --write 'src/**/*.{js,jsx,ts,tsx}'
+```
+
 <h1>react-three-fiber</h1>
 
 <a href="https://travis-ci.org/react-spring/react-three-fiber"><img src="https://travis-ci.org/react-spring/react-three-fiber.svg?branch=master" alt="Build Status"></a>
